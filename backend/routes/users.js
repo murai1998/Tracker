@@ -17,4 +17,10 @@ router.route("/add").post((req, res) => {
     .then(() => res.json("User added!"))
     .catch(err => res.status(400).json("Error: " + err));
 });
+
+router.route("/login").post((req, res, next) => {
+  console.log(req.user, " asparagus");
+  const { user } = req;
+  res.status(200).json(user);
+});
 module.exports = router;
